@@ -1,5 +1,6 @@
-## QUESTION 1
 
+## QUESTION 1
+require 'pry'
 pokemon = [
   {
     "id": 1,
@@ -35,6 +36,7 @@ pokemon = [
           "ability": {
               "name": "fire",
               "url": "http://pokeapi.co/api/v2/ability/38/"
+
           }
       }
   ]
@@ -60,6 +62,22 @@ pokemon = [
 }
 ]
 
+
+binding.pry
+
+pokemon[0][:abilities][0][:ability][:url]
+
+pokemon.select do |hash|
+  hash[:base_experience] > 40
+end
+
+pokemon.map do |hash|
+  hash[:name]
+end
+
+pokemon.any? do |hash|
+  hash[:weight] > 60
+end
 
 # How would you get the url for Bulbasaur's ability?
 # How would you return the first pokemon with base experience over 40?
